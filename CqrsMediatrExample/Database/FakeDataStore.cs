@@ -4,14 +4,14 @@ namespace CqrsMediatrExample.Database
 {
     public class FakeDataStore
     {
-        private static List<Product> _products;
+        private static List<Product> _products = new();
         public FakeDataStore()
         {
             _products = new List<Product>
             {
-                new Product { Id = 1, Name = "Test Product 1" },
-                new Product { Id = 2, Name = "Test Product 2" },
-                new Product { Id = 3, Name = "Test Product 3" }
+                new() { Id = 1, Name = "Test Product 1" },
+                new() { Id = 2, Name = "Test Product 2" },
+                new() { Id = 3, Name = "Test Product 3" }
             };
         }
         public async Task AddProduct(Product product)
